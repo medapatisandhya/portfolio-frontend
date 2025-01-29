@@ -1,0 +1,383 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  @keyframes popUp {
+    0% {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes popUpContent {
+    0% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .fullScreen {
+    width: 100vw;
+    height: 100vh;
+    background-color: #13072d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: popUp 1s ease-out;
+  }
+  .leftNav {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .name {
+    margin: 0;
+    color: #ffffff;
+    font-size: 2rem;
+    margin-right: 200px;
+    margin-left: 100px;
+    opacity: 0;
+    animation: popUpContent 1s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 2rem;
+  }
+  
+  .link {
+    margin: 0 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  
+  .menuIcon {
+    display: none;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-top: 5px;
+  }
+  
+  .nav.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    left: 200px;
+    background-color: #13072d;
+    border-radius: 10px;
+    z-index: 99;
+  }
+  
+  .nav.show .link {
+    margin: 5px 0;
+  }
+  
+  .centerDiv {
+    width: 90vw;
+    height: 80vh;
+    background: linear-gradient(to bottom right, #92e5f6, #13072d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    opacity: 0;
+    animation: popUpContent 1s ease-out forwards;
+    animation-delay: 1s;
+  }
+  
+  .splitDiv {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .part {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #13072d;
+    font-weight: bold;
+  }
+  
+  .flowerDiv {
+    width: 60%;
+    height: 75%;
+    background: linear-gradient(to bottom right, #13072d, #92e5f6);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    opacity: 0;
+    animation: popUpContent 1s ease-out forwards;
+    animation-delay: 1.5s;
+  }
+  
+  .flowerDiv::before,
+  .flowerDiv::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    z-index: -1;
+  }
+  
+  .flowerDiv::before {
+    transform: translateY(-50%) rotate(10deg);
+  }
+  
+  .flowerDiv::after {
+    transform: translateY(-50%) rotate(-30deg);
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: popUpContent 1s ease-out forwards;
+    animation-delay: 2s;
+  }
+  
+  .innerContainer {
+    text-align: center;
+  }
+  
+  .title {
+    margin: 10px 0;
+    font-size: 2.0rem;
+    color: #ffffff;
+    opacity: 0;
+    animation: popUpContent 1s ease-out forwards;
+    animation-delay: 2.5s;
+  }
+  
+  .subtitle {
+    margin: 5px 0;
+    font-size: 1.5rem;
+    color: #ffffff;
+    opacity: 0;
+    animation: popUpContent 1s ease-out forwards;
+    animation-delay: 3s;
+  }
+  
+  .iconContainer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .icon {
+    font-size: 1.8rem;
+    color: #ffffff;
+    cursor: pointer;
+    opacity: 0;
+    animation: popUpContent 1s ease-out forwards;
+    animation-delay: 3.5s;
+  }
+  @media (max-width: 769px) {
+    .title {
+      font-size: 1.8rem;
+    }
+  
+    .subtitle {
+      font-size: 1.2rem;
+    }
+  
+    .name {
+      margin-right: 0px;
+      margin-left: 0px;
+      font-size: 1.1rem;
+    }
+  
+    .link {
+      font-size: 1.0rem;
+    }
+  
+    .flowerDiv {
+      width: 70%;
+      height: 50%;
+    }
+  }
+  
+  @media (width: 1024px) {
+    .name {
+      margin-right: 10px;
+      margin-left: 0px;
+      font-size: 1.5rem;
+    }
+  
+    .link {
+      font-size: 1.5rem;
+    }
+  
+    .flowerDiv {
+      width: 90%;
+      height: 50%;
+    }
+  }
+  
+  @media (width: 1440px) {
+    .name {
+      font-size: 2rem;
+      margin-left: 10px;
+    }
+  
+    .link {
+      font-size: 1.8rem;
+    }
+    
+  }
+  
+  @media (max-width: 430px) {
+    .name {
+      font-size: 1.5rem;
+      margin-right: auto;
+      margin-left: 40px;
+    }
+  
+    .nav {
+      display: none;
+    }
+  
+    .menuIcon {
+      display: block;
+      margin-right: 30px;
+    }
+  
+    .splitDiv {
+      flex-direction: column;
+    }
+  
+    .part {
+      width: 100%;
+      height: auto;
+    }
+  
+    .innerContainer {
+      margin-bottom: 40px;
+    }
+  
+    .flowerDiv {
+      margin-top: 20px;
+      height: 100%;
+    }
+  
+    .title {
+      margin-top: 20px;
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .name {
+      font-size: 1.3rem;
+      margin-right: auto;
+      margin-left: 30px;
+    }
+  
+    .nav {
+      display: none;
+    }
+  
+    .menuIcon {
+      display: block;
+    }
+  }
+  @media (max-width: 321px) {
+    .name {
+      font-size: 1.3rem;
+      margin-right: auto;
+      margin-left: 30px;
+    }
+    .centerDiv{
+      margin-top: 30px;
+    }
+    .flowerDiv{
+      position: relative;
+      bottom: 40px;
+    }
+    .nav {
+      display: none;
+    }
+  
+    .menuIcon {
+      display: block;
+    }
+  }
+  @media (max-width: 480px) {
+    .name {
+      font-size: 1.5rem;
+      margin-right: auto;
+      margin-left: 40px;
+    }
+  
+    .nav {
+      display: none;
+    }
+  
+    .menuIcon {
+      display: block;
+      margin-left: 100px;
+    }
+  
+    .splitDiv {
+      flex-direction: column;
+    }
+  
+    .part {
+      width: 100%;
+      height: auto;
+    }
+  
+    .innerContainer {
+      margin-bottom: 40px;
+    }
+  
+    .flowerDiv {
+      margin-top: 20px;
+      height: 100%;
+    }
+  
+    .title {
+      margin-top: 20px;
+      font-size: 1.5rem;
+    }
+  }
+  
+  

@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #282c34;
+}
+
+p {
+  color: #555;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}

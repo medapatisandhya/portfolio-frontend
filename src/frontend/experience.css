@@ -1,0 +1,624 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+.exmain {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #13072d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    /* position: relative;
+    bottom: 130px; */
+}
+.exname h2 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 3px solid gainsboro;
+}
+.exinner {
+    width: 90vw;
+    height: 80vh;
+    background: linear-gradient(to bottom right, #13072d, #92e5f6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    position: relative;
+}
+.exinner::before {
+    content: "";
+    position: absolute;
+    height: 70%;
+    width: 5px;
+    background-color: #c3eef7;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #c5e0e4;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: #14b0cb;
+    position: absolute;
+}
+.circle.top {
+    top: 30%;
+    left: 48%;
+    transform: translateX(-50%);
+}
+.circle.bottom {
+    bottom: 30%;
+    left: 48%;
+    transform: translateX(-50%);
+}
+.rectangle {
+    width: 400px;
+    height: 200px;
+    background-color:#c5e0e4;
+    border: 2px solid #c3eef7;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0px 0px 3px 3px #95c4cd ;
+    position: absolute;
+}
+.top-rectangle h3{
+    font-size: 1.5rem;
+    position: relative;
+    top: 35px;
+}
+.top-rectangle h4{
+    font-size: 1.2rem;
+    position: relative;
+    top: 40px;
+}
+.top-rectangle p{
+    font-size: 1rem;
+    position: relative;
+    top: 40px;
+}
+.top-rectangle span{
+    font-size: 1rem;
+    position: relative;
+    top: 35px;
+}
+.top-rectangle {
+    top: calc(30% - 100px); 
+    left: calc(50% + 100px);
+}
+.bottom-rectangle {
+    bottom: calc(30% - 100px); 
+    left: calc(50% - 500px);
+}
+.bottom-rectangle h3{
+    font-size: 1.5rem;
+    position: relative;
+    top: 35px;
+}
+.bottom-rectangle h4{
+    font-size: 1.2rem;
+    position: relative;
+    top: 40px;
+}
+.bottom-rectangle p{
+    font-size: 1rem;
+    position: relative;
+    top: 40px;
+}
+.bottom-rectangle span{
+    font-size: 1rem;
+    position: relative;
+    top: 35px;
+}
+@media (max-width: 768px) {
+    .exmain{
+        /* position: relative;
+        bottom: 150px; */
+    }
+    .exinner {
+        flex-direction: column; 
+    }
+    .exinner::before {
+        left: 20%; 
+        height: 90%; 
+    }
+    .circle.top{
+        position: relative;
+        left: -210px;
+        top: -100px;
+    }
+    .circle.bottom{
+        position: relative;
+        left: -210px;
+        top: 70px;
+    }
+    .top-rectangle {
+        top: calc(30% - 100px); 
+        left: calc(10% + 60px); 
+    }
+    .bottom-rectangle {
+        bottom: calc(30% - 100px); 
+        left: calc(10% + 60px); 
+    }
+}
+@media (max-width: 430px) {
+    .exmain{
+        /* position: relative;
+        bottom: 50px; */
+    }
+    .rectangle{
+        width: 200px;
+    }
+    .top-rectangle h3{
+        font-size: 1.4rem;
+        position: relative;
+        top: 35px;
+    }
+    .top-rectangle h4{
+        font-size: 1.2rem;
+        position: relative;
+        top: 40px;
+    }
+    .top-rectangle p{
+        font-size: 0.9rem;
+        position: relative;
+        top: 50px;
+    }
+    .top-rectangle span{
+        font-size: 0.8rem;
+        position: relative;
+        top: 40px;
+    }
+    .bottom-rectangle h3{
+        font-size: 1.4rem;
+        position: relative;
+        top: 35px;
+    }
+    .bottom-rectangle h4{
+        font-size: 1.2rem;
+        position: relative;
+        top: 40px;
+    }
+    .bottom-rectangle p{
+        font-size: 0.9rem;
+        position: relative;
+        top: 50px;
+    }
+    .bottom-rectangle span{
+        font-size: 0.8rem;
+        position: relative;
+        top: 40px;
+    }
+    .exinner::before {
+        left: 10%; 
+        height: 90%; 
+    }
+    .circle.top{
+        position: relative;
+        left: -120px;
+        top: -100px;
+    }
+    .circle.bottom{
+        position: relative;
+        left: -120px;
+        top: 70px;
+    }
+}
+.exinner .rectangle,
+.exinner .circle {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 1s ease-in-out;
+}
+.circle.top {
+    transform: translateY(-200px); 
+}
+.circle.bottom {
+    transform: translateY(-200px); 
+}
+.rectangle.top-rectangle {
+    transform: translateX(200px); 
+}
+.rectangle.bottom-rectangle {
+    transform: translateX(-200px); 
+}
+.exmain.animate .circle.top {
+    transform: translateY(0);
+    opacity: 1;
+}
+.exmain.animate .circle.bottom {
+    transform: translateY(0);
+    opacity: 1;
+}
+.exmain.animate .rectangle.top-rectangle {
+    transform: translateX(0);
+    opacity: 1;
+}
+.exmain.animate .rectangle.bottom-rectangle {
+    transform: translateX(0);
+    opacity: 1;
+}
+@media (max-width: 480px) {
+    .exmain{
+        /* position: relative;
+        bottom: 50px; */
+    }
+    .rectangle{
+        width: 290px;
+    }
+    .top-rectangle h3{
+        font-size: 1.4rem;
+        position: relative;
+        top: 35px;
+    }
+    .top-rectangle h4{
+        font-size: 1.2rem;
+        position: relative;
+        top: 40px;
+    }
+    .top-rectangle p{
+        font-size: 0.9rem;
+        position: relative;
+        top: 50px;
+    }
+    .top-rectangle span{
+        font-size: 0.8rem;
+        position: relative;
+        top: 40px;
+    }
+    .bottom-rectangle h3{
+        font-size: 1.4rem;
+        position: relative;
+        top: 35px;
+    }
+    .bottom-rectangle h4{
+        font-size: 1.2rem;
+        position: relative;
+        top: 40px;
+    }
+    .bottom-rectangle p{
+        font-size: 0.9rem;
+        position: relative;
+        top: 50px;
+    }
+    .bottom-rectangle span{
+        font-size: 0.8rem;
+        position: relative;
+        top: 40px;
+    }
+    .exinner::before {
+        left: 10%; 
+        height: 90%; 
+    }
+    .circle.top{
+        position: relative;
+        left: -160px;
+        top: -100px;
+    }
+    .circle.bottom{
+        position: relative;
+        left: -160px;
+        top: 70px;
+    }
+}
+.exinner .rectangle,
+.exinner .circle {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 1s ease-in-out;
+}
+.circle.top {
+    transform: translateY(-200px);
+}
+.circle.bottom {
+    transform: translateY(-200px); 
+}
+.rectangle.top-rectangle {
+    transform: translateX(200px); 
+}
+.rectangle.bottom-rectangle {
+    transform: translateX(-200px); 
+}
+.exmain.animate .circle.top {
+    transform: translateY(0);
+    opacity: 1;
+}
+.exmain.animate .circle.bottom {
+    transform: translateY(0);
+    opacity: 1;
+}
+.exmain.animate .rectangle.top-rectangle {
+    transform: translateX(0);
+    opacity: 1;
+}
+.exmain.animate .rectangle.bottom-rectangle {
+    transform: translateX(0);
+    opacity: 1;
+}
+@media (max-width: 391px) {
+    .exmain{
+        /* position: relative;
+        bottom: 50px; */
+    }
+    .rectangle{
+        width: 250px;
+    }
+    .top-rectangle h3{
+        font-size: 1.4rem;
+        position: relative;
+        top: 35px;
+    }
+    .top-rectangle h4{
+        font-size: 1.2rem;
+        position: relative;
+        top: 40px;
+    }
+    .top-rectangle p{
+        font-size: 0.9rem;
+        position: relative;
+        top: 50px;
+    }
+    .top-rectangle span{
+        font-size: 0.8rem;
+        position: relative;
+        top: 40px;
+    }
+    .bottom-rectangle h3{
+        font-size: 1.4rem;
+        position: relative;
+        top: 35px;
+    }
+    .bottom-rectangle h4{
+        font-size: 1.2rem;
+        position: relative;
+        top: 40px;
+    }
+    .bottom-rectangle p{
+        font-size: 0.9rem;
+        position: relative;
+        top: 50px;
+    }
+    .bottom-rectangle span{
+        font-size: 0.8rem;
+        position: relative;
+        top: 40px;
+    }
+    .exinner::before {
+        left: 10%; 
+        height: 90%; 
+    }
+    .circle.top{
+        position: relative;
+        left: -130px;
+        top: -100px;
+    }
+    .circle.bottom{
+        position: relative;
+        left: -130px;
+        top: 70px;
+    }
+}
+.exinner .rectangle,
+.exinner .circle {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 1s ease-in-out;
+}
+
+.circle.top {
+    transform: translateY(-200px);
+}
+.circle.bottom {
+    transform: translateY(-200px);
+}
+.rectangle.top-rectangle {
+    transform: translateX(200px);
+}
+.rectangle.bottom-rectangle {
+    transform: translateX(-200px);
+}
+.exmain.animate .circle.top {
+    transform: translateY(0);
+    opacity: 1;
+}
+.exmain.animate .circle.bottom {
+    transform: translateY(0);
+    opacity: 1;
+}
+.exmain.animate .rectangle.top-rectangle {
+    transform: translateX(0);
+    opacity: 1;
+}
+.exmain.animate .rectangle.bottom-rectangle {
+    transform: translateX(0);
+    opacity: 1;
+}
+@media (max-width: 321px) {
+    .exmain{
+        /* position: relative;
+        bottom: 50px; */
+    }
+    .rectangle{
+        width: 200px;
+        height: 150px;
+    }
+    .top-rectangle h3{
+        font-size: 1rem;
+        position: relative;
+        top: 25px;
+    }
+    .top-rectangle h4{
+        font-size: 1rem;
+        position: relative;
+        top: 30px;
+    }
+    .top-rectangle p{
+        font-size: 0.7rem;
+        position: relative;
+        top: 30px;
+    }
+    .top-rectangle span{
+        font-size: 0.8rem;
+        position: relative;
+        top: 20px;
+    }
+    .bottom-rectangle h3{
+        font-size: 1rem;
+        position: relative;
+        top: 25px;
+    }
+    .bottom-rectangle h4{
+        font-size: 1rem;
+        position: relative;
+        top: 30px;
+    }
+    .bottom-rectangle p{
+        font-size: 0.7rem;
+        position: relative;
+        top: 30px;
+    }
+    .bottom-rectangle span{
+        font-size: 0.8rem;
+        position: relative;
+        top: 20px;
+    }
+    .exinner::before {
+        left: 10%; 
+        height: 90%; 
+    }
+    .circle.top{
+        position: relative;
+        left: -110px;
+        top: -30px;
+    }
+    .circle.bottom{
+        position: relative;
+        left: -110px;
+        top: 40px;
+    }
+}
+.exinner .rectangle,
+.exinner .circle {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 1s ease-in-out;
+}
+.circle.top {
+    transform: translateY(-200px); 
+}
+.circle.bottom {
+    transform: translateY(-200px); 
+}
+.rectangle.top-rectangle {
+    transform: translateX(200px); 
+}
+.rectangle.bottom-rectangle {
+    transform: translateX(-200px); 
+}
+.exmain.animate .circle.top {
+    transform: translateY(0);
+    opacity: 1;
+}
+.exmain.animate .circle.bottom {
+    transform: translateY(0);
+    opacity: 1;
+}
+.exmain.animate .rectangle.top-rectangle {
+    transform: translateX(0);
+    opacity: 1;
+}
+.exmain.animate .rectangle.bottom-rectangle {
+    transform: translateX(0);
+    opacity: 1;
+}
+@media (min-width: 900px) and (max-width: 951px){
+    .exmain{
+        /* position: relative;
+        bottom: 150px; */
+    }
+    .rectangle{
+        width: 450px;
+    }
+    .exinner {
+        flex-direction: column; 
+    }
+    .exinner::before {
+        left: 20%; 
+        height: 90%; 
+    }
+    .circle.top{
+        position: relative;
+        left: -210px;
+        top: -150px;
+    }
+    .circle.bottom{
+        position: relative;
+        left: -210px;
+        top: 70px;
+    }
+    .top-rectangle {
+        top: calc(30% - 100px); 
+        left: calc(10% + 60px); 
+    }
+    .bottom-rectangle {
+        bottom: calc(30% - 100px); 
+        left: calc(10% + 60px); 
+    }
+}
+@media (min-width: 853px) and (max-width: 899px) {
+    .exmain {
+        /* Adjustments if needed */
+    }
+
+    .rectangle {
+        width: 430px; /* Slightly reduced for better fit */
+    }
+
+    .exinner {
+        flex-direction: column;
+    }
+
+    .exinner::before {
+        left: 18%; /* Adjusted to keep alignment */
+        height: 88%;
+    }
+
+    .circle.top {
+        position: relative;
+        left: -200px;
+        top: -140px;
+    }
+
+    .circle.bottom {
+        position: relative;
+        left: -200px;
+        top: 75px;
+    }
+
+    .top-rectangle {
+        top: calc(28% - 100px);
+        left: calc(12% + 55px); /* Adjusted */
+    }
+
+    .bottom-rectangle {
+        bottom: calc(28% - 100px);
+        left: calc(12% + 55px); /* Adjusted */
+    }
+}
